@@ -18,7 +18,7 @@ require_once('helpers/system_helper.php');
 function myAutoload($class_name)
 {
 
-    require_once('libraries/' . $class_name . '.php');
+    require_once('models/' . $class_name . '.php');
 }
 
 
