@@ -4,7 +4,7 @@
 define("DB_HOST", "localhost");
 define("DB_USER", "root");
 define("DB_PASS", "");
-define("DB_NAME", "talkingspace");
+define("DB_NAME", "auction");
 
 
 define("SITE_TITLE", "Online Auction System");

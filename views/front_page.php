@@ -8,27 +8,13 @@
     <ul class="nav navbar-nav navbar-left">
 
 
+        <?Php foreach ($categories as $category) : ?>
+            <li class="inactive"><a href="category.html">
+                    <?php echo $category->name; ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
 
-        <li class="inactive"><a href="category.html">
-                Fashion
-            </a>
-        </li>
-        <li class="inactive"><a href="category.html">
-                Electornics
-            </a>
-        </li>
-        <li class="inactive"><a href="category.html">
-                Watch
-            </a>
-        </li>
-        <li class="inactive"><a href="category.html">
-                Appliances
-            </a>
-        </li>
-        <li class="inactive"><a href="category.html">
-                Car
-            </a>
-        </li>
 
     </ul>
 
@@ -122,7 +108,7 @@
 
             <div class="container">
                 <div class="product-slider">
-
+                <?php foreach ($allProducts as $product): ?>
                     <div class="item">
                         <div class="product">
                             <div class="flip-container">
@@ -130,7 +116,8 @@
                                     <div class="front">
 
                                         <a href="detail.html">
-                                            <img src="img/a.jpg" alt="" class="img-responsive">
+                                        <img src="<?php echo BASE_URI; ?>views/img/<?php echo $product->image?>" alt="" class="img-responsive">
+    
                                         </a>
                                     </div>
                                     <div class="back">
@@ -146,11 +133,11 @@
                             <div class="text">
                                 <h3><a href="detail.html">
 
-                                        Lorem Ipsum
+                                <?php echo $product->name; ?>
                                     </a></h3>
                                 <p class="price">Rs :
 
-                                    1,000
+                                <?php echo $product->price?>
                                 </p>
 
                             </div>
@@ -158,286 +145,8 @@
                         </div>
                         <!-- /.product -->
                     </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/a.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-                                        <a href="detail.html">
-                                            <img src="img/banner.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    1,000
-                                </p>
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/a.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-                                        <a href="detail.html">
-                                            <img src="img/banner.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    1,000
-                                </p>
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/a.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-                                        <a href="detail.html">
-                                            <img src="img/banner.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    1,000
-                                </p>
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/a.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-                                        <a href="detail.html">
-                                            <img src="img/banner.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    1,000
-                                </p>
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/a.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-                                        <a href="detail.html">
-                                            <img src="img/banner.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    1,000
-                                </p>
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/a.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-                                        <a href="detail.html">
-                                            <img src="img/banner.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    1,000
-                                </p>
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/a.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-                                        <a href="detail.html">
-                                            <img src="img/banner.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    1,000
-                                </p>
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/a.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-                                        <a href="detail.html">
-                                            <img src="img/banner.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    1,000
-                                </p>
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
+                    <?php endforeach;?>
+                    
                 </div>
             </div>
             <!-- /.container -->
@@ -460,7 +169,7 @@
 
             <div class="container">
                 <div class="product-slider">
-
+            <?php foreach($electronicProducts as $electronicProduct):?>
                     <div class="item">
                         <div class="product">
                             <div class="flip-container">
@@ -468,15 +177,15 @@
                                     <div class="front">
 
                                         <a href="detail.html">
-                                            <img src="img/banner2.jpg" alt="" class="img-responsive">
+                                            <img src="<?php echo BASE_URI; ?>views/img/<?php echo $electronicProduct->image?>" alt="" class="img-responsive">
                                         </a>
                                     </div>
-                                    <div class="back">
+                                    <!-- <div class="back">
 
                                         <a href="detail.html">
                                             <img src="img/blog-avatar.jpg" alt="" class="img-responsive">
                                         </a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <a href="detail.html" class="invisible">
@@ -485,11 +194,11 @@
                             <div class="text">
                                 <h3><a href="detail.html">
 
-                                        Lorem Ipsum
+                                    <?php echo $electronicProduct->name; ?>
                                     </a></h3>
                                 <p class="price">Rs :
 
-                                    999
+                                <?php echo $electronicProduct->price;?>
                                 </p>
 
 
@@ -498,341 +207,7 @@
                         </div>
                         <!-- /.product -->
                     </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/banner2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-
-                                        <a href="detail.html">
-                                            <img src="img/blog-avatar.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    999
-                                </p>
-
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/banner2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-
-                                        <a href="detail.html">
-                                            <img src="img/blog-avatar.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    999
-                                </p>
-
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/banner2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-
-                                        <a href="detail.html">
-                                            <img src="img/blog-avatar.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    999
-                                </p>
-
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/banner2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-
-                                        <a href="detail.html">
-                                            <img src="img/blog-avatar.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    999
-                                </p>
-
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/banner2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-
-                                        <a href="detail.html">
-                                            <img src="img/blog-avatar.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    999
-                                </p>
-
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/banner2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-
-                                        <a href="detail.html">
-                                            <img src="img/blog-avatar.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    999
-                                </p>
-
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/banner2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-
-                                        <a href="detail.html">
-                                            <img src="img/blog-avatar.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    999
-                                </p>
-
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/banner2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-
-                                        <a href="detail.html">
-                                            <img src="img/blog-avatar.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    999
-                                </p>
-
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
-                    <div class="item">
-                        <div class="product">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-
-                                        <a href="detail.html">
-                                            <img src="img/banner2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-
-                                        <a href="detail.html">
-                                            <img src="img/blog-avatar.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3><a href="detail.html">
-
-                                        Lorem Ipsum
-                                    </a></h3>
-                                <p class="price">Rs :
-
-                                    999
-                                </p>
-
-
-                            </div>
-                            <!-- /.text -->
-                        </div>
-                        <!-- /.product -->
-                    </div>
-
-
+              <?php endforeach;?>      
 
 
                 </div>

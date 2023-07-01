@@ -96,26 +96,14 @@
 
                 <ul class="nav navbar-nav navbar-left">
 
+                    <?php foreach($categories as $cateory): ?>
                     <li class="inactive"><a href="category.html">
-                            Electronics
+                            <?php echo $cateory->name;?>
+
                         </a>
                     </li>
-                    <li class="inactive"><a href="category.html">
-                            Watch
-                        </a>
-                    </li>
-                    <li class="inactive"><a href="category.html">
-                            Car
-                        </a>
-                    </li>
-                    <li class="inactive"><a href="category.html">
-                            Art
-                        </a>
-                    </li>
-                    <li class="inactive"><a href="category.html">
-                            Appliances
-                        </a>
-                    </li>
+                    <?php endforeach;?>
+
 
                 </ul>
 
@@ -132,7 +120,8 @@
                 <!--/.nav-collapse -->
 
                 <div class="navbar-collapse collapse right" id="search-not-mobile">
-                    <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
+                    <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse"
+                        data-target="#search">
                         <span class="sr-only">Toggle search</span>
                         <i class="fa fa-search"></i>
                     </button>
