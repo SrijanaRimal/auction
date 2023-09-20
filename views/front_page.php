@@ -115,23 +115,23 @@
                                 <div class="flipper">
                                     <div class="front">
 
-                                        <a href="detail.html">
+                                        <a href="<?php echo BASE_URI; ?>detail.php">
                                         <img src="<?php echo BASE_URI; ?>views/img/<?php echo $product->image?>" alt="" class="img-responsive">
     
                                         </a>
                                     </div>
                                     <div class="back">
-                                        <a href="detail.html">
+                                        <a href="<?php echo BASE_URI; ?>detail.php">
                                             <img src="img/banner.jpg" alt="" class="img-responsive">
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <a href="detail.html" class="invisible">
+                            <a href="<?php echo BASE_URI; ?>detail.php" class="invisible">
                                 <img src="img/product1.jpg" alt="" class="img-responsive">
                             </a>
                             <div class="text">
-                                <h3><a href="detail.html">
+                                <h3><a href="<?php echo BASE_URI; ?>detail.php">
 
                                 <?php echo $product->name; ?>
                                     </a></h3>
@@ -176,23 +176,23 @@
                                 <div class="flipper">
                                     <div class="front">
 
-                                        <a href="detail.html">
+                                        <a href="<?php echo BASE_URI; ?>detail.php">
                                             <img src="<?php echo BASE_URI; ?>views/img/<?php echo $electronicProduct->image?>" alt="" class="img-responsive">
                                         </a>
                                     </div>
                                     <!-- <div class="back">
 
-                                        <a href="detail.html">
+                                        <a href="<?php echo BASE_URI; ?>detail.php">
                                             <img src="img/blog-avatar.jpg" alt="" class="img-responsive">
                                         </a>
                                     </div> -->
                                 </div>
                             </div>
-                            <a href="detail.html" class="invisible">
+                            <a href="<?php echo BASE_URI; ?>detail.php" class="invisible">
                                 <img src="img/product1.jpg" alt="" class="img-responsive">
                             </a>
                             <div class="text">
-                                <h3><a href="detail.html">
+                                <h3><a href="<?php echo BASE_URI; ?>detail.php">
 
                                     <?php echo $electronicProduct->name; ?>
                                     </a></h3>

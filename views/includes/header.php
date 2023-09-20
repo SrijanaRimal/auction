@@ -65,11 +65,11 @@
          _________________________________________________________ -->
 
     <div class="navbar navbar-default yamm" role="navigation" id="navbar">
-        <div class="container">
+        <div class="container"> 
             <div class="navbar-header">
 
                 <a class="navbar-brand home" href="index.php" data-animate-hover="bounce">
-                    <img height="50px" src="img/logo.png" alt="Obaju logo" class="hidden-xs">
+                    <img height="50px" src="<?php echo BASE_URI; ?>views/img/logo.png" alt="Obaju logo" class="hidden-xs">
                     <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go
                         to
                         homepage</span>
