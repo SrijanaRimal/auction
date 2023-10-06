@@ -131,7 +131,7 @@
                                 <img src="img/product1.jpg" alt="" class="img-responsive">
                             </a>
                             <div class="text">
-                                <h3><a href="<?php echo BASE_URI; ?>detail.php">
+                                <h3><a href="<?php echo BASE_URI; ?>detail.php?id=<?php echo $product->id; ?>">
 
                                 <?php echo $product->name; ?>
                                     </a></h3>
@@ -192,7 +192,7 @@
                                 <img src="img/product1.jpg" alt="" class="img-responsive">
                             </a>
                             <div class="text">
-                                <h3><a href="<?php echo BASE_URI; ?>detail.php">
+                                <h3><a href="<?php echo BASE_URI; ?>detail.php?id=<?php echo $electronicProduct->id;?>">
 
                                     <?php echo $electronicProduct->name; ?>
                                     </a></h3>

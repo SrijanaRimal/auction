@@ -7,8 +7,13 @@ $category = new Category();
 $product = new Product();
 
 $template->categories = $category->getAllCategories();
-$template->electronicProducts = $product->getProductsByCategory(1);
-   $template->allProducts=$product->getAllProducts();
+ $template->electronicProducts = $product->getProductsByCategory(1);
+
+$electronicProducts = $product->getElectronicProduct();
+
+
+$template->allProducts=$product->getAllProducts();
+$template->electronicProducts=$electronicProducts;
 
 
 
