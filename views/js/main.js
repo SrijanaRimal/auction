@@ -31,3 +31,8 @@
   return;
   s;
 })({ 1: [function (require, module, exports) {}, {}] }, {}, [1]);
+
+
+  // setTimeout(function() {
+  //   document.querySelector(".alert").style.display = "none";
+  // }, 2000);

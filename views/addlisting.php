@@ -50,7 +50,8 @@
                     </a>
                 </div>
             </div>
-
+            
+            <?php if(isLoggedIn()):?>
             <div class="col-md-9">
 
 
@@ -215,6 +216,9 @@
                 </div>
                 <!-- /.col-md-9 -->
             </div>
+            <?php else:?>
+                <h2>Please <a href="register.php"> login or register </a>to add your product</h2>
+            <?php endif;?>
             <!-- /.container -->
         </div>
 

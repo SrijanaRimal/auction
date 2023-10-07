@@ -1,9 +1,12 @@
 <?php require_once('core/init.php');?>
 
 <?php 
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 
 $template=new Template('views/register.php');
 $userObject = new User();
+$category = new Category();
 
 
 if(isset($_POST['cmdlogin'])){
@@ -11,7 +14,12 @@ if(isset($_POST['cmdlogin'])){
     $password = $_POST['password'];
     $user =$userObject->login($username , $password);
 
-    redirect('index.php');
+    $_SESSION['user_id'] = $user->id;
+    $_SESSION['username'] = $user->username;
+    $_SESSION['name'] = $user->name;
+    $_SESSION['is_logged_in'] = true;
+
+    redirect('index.php', "logged in", "success");
 
 
 }
@@ -25,7 +33,7 @@ if(isset($_POST['register'])){
     $password = $_POST['password'];
     $register = $userObject->register($firstName, $lastName, $address, $contactNumber, $username, $password);
     if($register == true){
-        redirect('index.php');  
+        redirect('index.php', "registered", "success");
     }
     else{
         echo("Data is not inserted");
@@ -34,8 +42,14 @@ if(isset($_POST['register'])){
 
 } 
 
+if(isset($_GET['logout'])){
+
+    session_unset();
+    redirect('index.php', "logged out", "error");
+}
 
 
+$template->categories = $category->getAllCategories();
 
 echo $template
 ?>

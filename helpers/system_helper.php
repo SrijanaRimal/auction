@@ -30,6 +30,9 @@ function redirect($page = FALSE, $message = NULL, $message_type = NULL)
  */
 function displayMessage()
 {
+    error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
     if (!empty($_SESSION['message'])) {
 
         //Assign Message Var
@@ -40,14 +43,28 @@ function displayMessage()
             $message_type = $_SESSION['message_type'];
             //Create Output
             if ($message_type == 'error') {
+                
+                
                 echo '<div class="alert alert-danger">' . $message . '</div>';
             } else {
+                
                 echo '<div class="alert alert-success">' . $message . '</div>';
             }
         }
         //Unset Message
         unset($_SESSION['message']);
         unset($_SESSION['message_type']);
+
+        // Add JavaScript to remove the message box after 2 seconds
+        echo '
+            <script>
+                setTimeout(function() {
+                    document.querySelector(".alert").style.display = "none";
+                }, 3000);
+            </script>
+        ';
+
+
     } else {
         echo '';
     }

@@ -6,6 +6,7 @@ $template = new Template('views/front_page.php');
 $category = new Category();
 $product = new Product();
 
+
 $template->categories = $category->getAllCategories();
  $template->electronicProducts = $product->getProductsByCategory(1);
 

@@ -9,19 +9,18 @@ class Bid
 
     public function __construct(){
 
-        $this->db = new database;
+        $this->db = new Database ();
     }
 
 
 
-    public function addBid($expectedPrice, $endDate, $currentBid, $productId){
+    public function addBid($bidPrice, $bidder, $productId){
 
-        $this->db->query("INSERT INTO bid(expected_price, end_date, current_bid, product_id)
-        VALUES(:expectedPrice, :endDate, :currentBid, :productId)");
+        $this->db->query("INSERT INTO bid(bid_price, bidder, product_id)
+        VALUES(:bidPrice, :bidder, :productId)");
 
-        $this->db->bind(':expectedPrice', $expectedPrice);
-        $this->db->bind(':endDate', $endDate);
-        $this->db->bind(':currentBid', $currentBid);
+        $this->db->bind(':bidPrice', $bidPrice);
+        $this->db->bind(':bidder', $bidder);
         $this->db->bind(':productId', $productId);
 
 
@@ -40,6 +39,34 @@ class Bid
          $result = $this->db->single();
          return $result;
     }
+
+    
+
+
+    public function getUserBiddings($userId)
+    {
+        $this->db->query("SELECT bid.*, product.* FROM  bid INNER JOIN product ON bid.product_id = product.id WHERE  bid.bidder = :user_id");
+        $this->db->bind(':user_id', $userId);
+        $result = $this->db->resultset();
+        return $result;
+    }
+
+    public function getWiningBId($productId, $winningBidPrice){
+        $this->db->query("SELECT * FROM  bid WHERE  product_id = :product_id AND bid_price = :bid_price");
+        $this->db->bind(':product_id', $productId);
+        $this->db->bind(':bid_price', $winningBidPrice);
+        $result = $this->db->single();
+        return $result;
+    }
+
+
+    // public function getFinalBId($productId, $bidder)
+    // {
+    //     $this->db->query("SELECT user.*, product.* FROM  user INNER JOIN product ON bid.product_id = product.id WHERE  bid.bidder = :user_id");
+    //     $this->db->bind(':user_id', $userId);
+    //     $result = $this->db->resultset();
+    //     return $result;
+    // }
 
 
 

@@ -7,7 +7,7 @@ class User
 
     public function __construct()
     {
-        $this->db = new database;
+        $this->db = new Database();
     }
     public function login($username,$password){
         $encryptedPassword = md5($password);
@@ -39,6 +39,13 @@ class User
         return false;
     }
 
+   }
+
+   public function getUserInfo($id){
+    $this->db->query("SELECT * FROM user WHERE id = :id");
+    $this->db->bind(':id',$id);
+    $result = $this->db->single();
+    return $result;
    }
 
 

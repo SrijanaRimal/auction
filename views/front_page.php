@@ -2,23 +2,23 @@
 
 
 
-
+<!-- 
 <div class="navbar-collapse collapse" id="navigation">
 
     <ul class="nav navbar-nav navbar-left">
 
 
-        <?Php foreach ($categories as $category) : ?>
+        <?php // foreach ($categories as $category) : ?>
             <li class="inactive"><a href="category.html">
-                    <?php echo $category->name; ?>
+                    <?php //echo $category->name; ?>
                 </a>
             </li>
-        <?php endforeach; ?>
+        <?php //endforeach; ?>
 
 
     </ul>
 
-</div>
+</div> -->
 <!--/.nav-collapse -->
 
 <div id="all">
@@ -29,13 +29,13 @@
             <div class="col-md-12">
                 <div id="main-slider">
                     <div class="item">
-                        <img src="img/main-slider1.jpg" alt="" class="img-responsive">
+                        <img src="<?php echo BASE_URI;?>views/img/main-slider1.jpg" alt="" class="img-responsive">
                     </div>
                     <div class="item">
-                        <img class="img-responsive" src="img/main-slider2.jpg" alt="">
+                        <img class="img-responsive" src="<?php echo BASE_URI;?>views/img/main-slider2.jpg" alt="">
                     </div>
                     <div class="item">
-                        <img class="img-responsive" src="img/main-slider3.jpg" alt="">
+                        <img class="img-responsive" src="<?php echo BASE_URI;?>views/img/main-slider3.jpg" alt="">
                     </div>
 
                 </div>

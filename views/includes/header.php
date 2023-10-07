@@ -51,8 +51,12 @@
             </div>
             <div class="col-md-6" data-animate="fadeInDown">
                 <ul class="menu">
-                    <li><a href="register.php">Login</a></li>
-                    <li><a href="register.php">Register</a></li>
+                    <?php if(isLoggedIn()):?>
+                        <li><a href="register.php?logout">Logout</a></li>
+                        <?php else:?>
+                            <li><a href="register.php">Login</a></li>
+                            <li><a href="register.php">Register</a></li>
+                    <?php endif;?>
                 </ul>
             </div>
         </div>
@@ -69,8 +73,7 @@
             <div class="navbar-header">
 
                 <a class="navbar-brand home" href="index.php" data-animate-hover="bounce">
-                    <img height="50px" src="<?php echo BASE_URI; ?>views/img/logo.png" alt="Obaju logo"
-                        class="hidden-xs">
+                    <img height="50px" src="<?php echo BASE_URI; ?>views/img/logo.png" alt="Obaju logo" class="hidden-xs">
                     <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go
                         to
                         homepage</span>
@@ -97,13 +100,12 @@
 
                 <ul class="nav navbar-nav navbar-left">
 
-                    <?php foreach($categories as $cateory): ?>
-                    <li class="inactive"><a href="category.html">
-                            <?php echo $cateory->name;?>
-
-                        </a>
-                    </li>
-                    <?php endforeach;?>
+                    <?php foreach ($categories as $cateory) : ?>
+                        <li class="inactive"><a href="<?php echo BASE_URI; ?>category.php?id=<?php echo $cateory->id; ?>">
+                                <?php echo $cateory->name; ?>
+                            </a>
+                        </li>
+                    <?php endforeach; ?>
 
 
                 </ul>
@@ -112,8 +114,12 @@
             <!--/.nav-collapse -->
 
             <div class="navbar-buttons">
-
-
+                <?php if(isLoggedIn()):?>
+                <div class="navbar-collapse collapse right ms-2" style="margin-left: 25px;" id="basket-overview">
+                    <a href="userItems.php" class="btn btn-primary navbar-btn"><span class="hidden-sm">Your products / Bids</span></a>
+                </div>
+                <?php endif;?>
+                
                 <div class="navbar-collapse collapse right" id="basket-overview">
                     <a href="addlisting.php" class="btn btn-primary navbar-btn"><span class="hidden-sm">Add
                             Listing</span></a>
@@ -121,8 +127,7 @@
                 <!--/.nav-collapse -->
 
                 <div class="navbar-collapse collapse right" id="search-not-mobile">
-                    <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse"
-                        data-target="#search">
+                    <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
                         <span class="sr-only">Toggle search</span>
                         <i class="fa fa-search"></i>
                     </button>
@@ -132,12 +137,12 @@
 
             <div class="collapse clearfix" id="search">
 
-                <form class="navbar-form" role="search" action="results.html" method="POST">
+                <form class="navbar-form" role="search" action="results.php" method="POST">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search" name="keyword">
                         <span class="input-group-btn">
 
-                            <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                            <button type="submit" name="searchBtn" class="btn btn-primary"><i class="fa fa-search"></i></button>
 
                         </span>
                     </div>
@@ -152,3 +157,4 @@
     <!-- /#navbar -->
 
     <!-- *** NAVBAR END *** -->
+    <?php displayMessage();?>

@@ -3,6 +3,7 @@
 <?php 
 
 $template=new Template('views/contact.php');
-
+$category = new Category();
+$template->categories = $category->getAllCategories();
 echo $template
 ?>

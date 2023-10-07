@@ -7,7 +7,7 @@ class Product
 
     public function __construct()
     {
-        $this->db = new database;
+        $this->db = new Database();
     }
     
  
@@ -60,6 +60,38 @@ class Product
 
   }
 
+  public function getUserProducts($userId)
+  {
+    $this->db->query("SELECT * FROM  product WHERE  product_owner = :user_id");
+    $this->db->bind(':user_id', $userId);
+    $result = $this->db->resultset();
+    return $result;
+  }
+
+
+  public function updateCurrentBid($id, $currentBid){
+        $this->db->query("UPDATE product SET current_bid = :currentBid WHERE id = :id");
+
+        $this->db->bind(':id', $id);
+        $this->db->bind(':currentBid', $currentBid);
+
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+  
+    public function getSearchResult($search){
+      $search = '%' . $search . '%';
+
+      $this->db->query("SELECT * FROM product WHERE name LIKE :name");
+      $this->db->bind(':name',$search);
+      $result = $this->db->resultset();
+      return $result;
+    }
 
 
 
@@ -67,4 +99,6 @@ class Product
 
 
 
-}
+
+
+  }

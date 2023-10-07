@@ -1,6 +1,9 @@
 <?php require_once('core/init.php');?>
 
-<?php 
+<?php
+
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 
 $template=new Template('views/addlisting.php');
 $categoryObject = new Category();
@@ -33,6 +36,8 @@ if(isset($_POST['SubmitListing'])){
     }
 
 }
+
+$template->categories = $categoryObject->getAllCategories();
 
 echo $template
 ?>

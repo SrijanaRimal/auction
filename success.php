@@ -3,6 +3,7 @@
 <?php 
 
 $template=new Template('views/success.php');
+$category = new Category();
 
 $productObject = new Product();
 $id = $_GET['productId'];
@@ -12,6 +13,8 @@ $id = $_GET['productId'];
 
 $template->singleProduct = $singleProduct;
 
+
+$template->categories = $category->getAllCategories();
 
 
 echo $template

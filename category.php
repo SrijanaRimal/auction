@@ -3,5 +3,18 @@
 <?php 
 
   $template=new Template('views/category.php');
-  echo$template
+
+  $categoryObject = new Category();
+
+  $categoryId = $_GET['id'];
+
+
+  $template->category = $categoryObject->getCategory($categoryId);
+$template->categories = $categoryObject->getAllCategories();
+  
+  $template->categoryProducts = $categoryObject->getCategoryProducts($categoryId);
+
+
+
+  echo$template;
   ?>
