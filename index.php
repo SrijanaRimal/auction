@@ -1,6 +1,10 @@
-<?php require_once('core/init.php'); ?>
+<?php require_once('core/init.php');
+// require_once('cosine.php');
+ ?>
 
 <?php
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 $template = new Template('views/front_page.php');
 
 $category = new Category();

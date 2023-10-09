@@ -140,4 +140,5 @@ class Product
   }
   return array_slice($result, 0, 3);
   }
+
 }

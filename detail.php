@@ -10,23 +10,17 @@ $template=new Template('views/detail.php');
 $product = new Product();
 $bidObject = new Bid();
 $user = new User();
+$recommender = new Recommender();
 
 $id = $_GET['id'];
 
 $singleProduct = $product->getSingleProduct($id);
-$category_id = $singleProduct->category_id;
-$recommendedProducts = $product->getRecommendedProducts();
-    
-if(!$recommendedProducts){
-    $recommendedProducts = $product->getProductsByCategory($category_id);
-}
 
-// Remove singleProduct from recommendedProducts if it is the same
-foreach ($recommendedProducts as $key => $recommendedProduct) {
-    if ($recommendedProduct->id == $singleProduct->id) {
-        unset($recommendedProducts[$key]);
-    }
-}
+$recommendedProducts = $recommender->recommend($singleProduct);
+
+
+
+$category_id = $singleProduct->category_id;
 
 $electronicProducts = $product->getProductsByCategory($category_id);
 $singleBid=$bidObject->getSingleBid($id);
