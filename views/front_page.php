@@ -135,9 +135,7 @@
 
                                 <?php echo $product->name; ?>
                                     </a></h3>
-                                <p class="price">Rs :
-
-                                <?php echo $product->price?>
+                                <p class="price">Currnet bid: Rs.<?php echo $product->current_bid?>
                                 </p>
 
                             </div>

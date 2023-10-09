@@ -1,8 +1,8 @@
 <?php require_once('core/init.php');?>
 
 <?php 
-// error_reporting(E_ALL);
-// ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 $template=new Template('views/register.php');
 $userObject = new User();
@@ -13,13 +13,17 @@ if(isset($_POST['cmdlogin'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
     $user =$userObject->login($username , $password);
-
-    $_SESSION['user_id'] = $user->id;
+    if(isset($user->id)){
+            $_SESSION['user_id'] = $user->id;
     $_SESSION['username'] = $user->username;
     $_SESSION['name'] = $user->name;
     $_SESSION['is_logged_in'] = true;
 
-    redirect('index.php', "logged in", "success");
+        redirect('index.php', "logged in", "success");
+    }
+    else{
+        redirect('register.php', "invalid username or password", "error");
+    }
 
 
 }
@@ -36,8 +40,7 @@ if(isset($_POST['register'])){
         redirect('index.php', "registered", "success");
     }
     else{
-        echo("Data is not inserted");
-        die();
+        redirect('register.php', "Something went wrong, please try again", "error");
     }
 
 } 

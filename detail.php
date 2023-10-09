@@ -15,7 +15,19 @@ $id = $_GET['id'];
 
 $singleProduct = $product->getSingleProduct($id);
 $category_id = $singleProduct->category_id;
-$similarProduct = $product->getProductsByCategory($category_id);
+$recommendedProducts = $product->getRecommendedProducts();
+    
+if(!$recommendedProducts){
+    $recommendedProducts = $product->getProductsByCategory($category_id);
+}
+
+// Remove singleProduct from recommendedProducts if it is the same
+foreach ($recommendedProducts as $key => $recommendedProduct) {
+    if ($recommendedProduct->id == $singleProduct->id) {
+        unset($recommendedProducts[$key]);
+    }
+}
+
 $electronicProducts = $product->getProductsByCategory($category_id);
 $singleBid=$bidObject->getSingleBid($id);
 
@@ -29,7 +41,7 @@ if(isset($_POST['bidnow'])){
 
         if($product->updateCurrentBid($id, $currentBid))
         {
-            if($bidObject->addBid($currentBid, $_SESSION['user_id'], $id)){
+            if($bidObject->addBid($currentBid, $id)){
 
                 
                 redirect('detail.php?id='.$id.'', 'Your bid is submitted successfully', 'success');
@@ -38,12 +50,10 @@ if(isset($_POST['bidnow'])){
     }
 }
 
-
 $template->singleProduct = $singleProduct;
-$template->similarProduct = $similarProduct;
+$template->recommendedProducts = $recommendedProducts;
 $template->electronicProducts = $electronicProducts;
 $template->singleBid = $singleBid;
-// $template->currentBid = $currentBid;
 
 
 $category = new Category();

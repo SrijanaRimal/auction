@@ -1,6 +1,5 @@
 <?php
 
-
 class Bid
 {
     private $db;
@@ -14,13 +13,14 @@ class Bid
 
 
 
-    public function addBid($bidPrice, $bidder, $productId){
-
+    public function addBid($bidPrice, $productId){
+        $bidderId = $_SESSION['user_id'];
+        echo($bidderId);
         $this->db->query("INSERT INTO bid(bid_price, bidder, product_id)
         VALUES(:bidPrice, :bidder, :productId)");
 
         $this->db->bind(':bidPrice', $bidPrice);
-        $this->db->bind(':bidder', $bidder);
+        $this->db->bind(':bidder', $bidderId);
         $this->db->bind(':productId', $productId);
 
 

@@ -87,7 +87,7 @@
                             </p>
                             <p class="text-center">
 
-                                price = <?php echo $singleProduct->price ;?>
+                                price = <?php echo $singleProduct->current_bid ;?>
                             </p>
                         </div>
 

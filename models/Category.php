@@ -1,4 +1,6 @@
 <?php
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 
 class Category
 {
@@ -14,6 +16,17 @@ class Category
         $result = $this->db->resultset();
         return $result;
     }
+
+    public function getCategories($categoriesIdArray)
+    {
+        $categoryIds = implode(',', $categoriesIdArray);
+        $query = "SELECT * FROM category WHERE id IN ($categoryIds)";
+        $query = $this->db->query($query);
+        $result = $this->db->resultset();
+        return $result;
+    }
+
+
     public function getCategory($id)
     {
         $query = $this->db->query("SELECT * FROM category WHERE id=:id");
@@ -28,6 +41,4 @@ class Category
         $result = $this->db->resultset();
         return $result;
     }
-
-
 }

@@ -251,7 +251,7 @@ $bidremainingTime = $currentDateTime->diff($bidEndDateTime);
 
 
 
-                    <?php foreach ($similarProduct as $product) : ?>
+                   <?php foreach ($recommendedProducts as $product) : ?>
                         <div class="col-md-3 col-sm-6">
                             <div class="product same-height">
                                 <div class="flip-container">
@@ -278,9 +278,7 @@ $bidremainingTime = $currentDateTime->diff($bidEndDateTime);
 
                                         <?php echo $product->name; ?>
                                     </h3>
-                                    <p class="price">Rs :
-
-                                        <?php echo $product->price; ?>
+                                    <p class="price">Current bid: Rs.<?php echo $product->current_bid; ?>
                                     </p>
                                 </div>
                             </div>
