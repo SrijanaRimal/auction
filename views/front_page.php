@@ -194,9 +194,7 @@
 
                                     <?php echo $electronicProduct->name; ?>
                                     </a></h3>
-                                <p class="price">Rs :
-
-                                <?php echo $electronicProduct->price;?>
+                                <p class="price">Current bid:Rs.<?php echo $electronicProduct->current_bid;?>
                                 </p>
 
 

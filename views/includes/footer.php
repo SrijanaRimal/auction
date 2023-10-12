@@ -30,8 +30,8 @@
 
                 <h4>Contact Us</h4>
 
-                <h5>+947772336598</h5>
-                <h5>+947772645468</h5>
+                <h5>9800000001</h5>
+                <h5>9877777771</h5>
 
 
 
@@ -45,10 +45,8 @@
                 <h4>Where to find us</h4>
 
                 <p><strong>Bid Now</strong>
-                    <br>13/25 New Avenue
-                    <br>Peradeniya
-                    <br>kandy
-                    <br>Sri Lanka
+                    <br>Maitidevi
+                    <br>Kathmandu
                 </p>
 
                 <a href="contact.php">Go to contact page</a>
@@ -65,9 +63,9 @@
                 <h4>User section</h4>
 
                 <ul>
-                    <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                    <li><a href="register.php" data-toggle="modal" data-target="#login-modal">Login</a>
                     </li>
-                    <li><a href="register.html">Regiter</a>
+                    <li><a href="register.php">Regiter</a>
                     </li>
                 </ul>
 

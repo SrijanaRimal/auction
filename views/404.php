@@ -29,7 +29,7 @@
                                 <strong>Menu</strong> above.
                             </p>
 
-                            <p class="buttons"><a href="index.html" class="btn btn-primary"><i class="fa fa-home"></i>
+                            <p class="buttons"><a href="index.php" class="btn btn-primary"><i class="fa fa-home"></i>
                                     Go to Homepage</a>
                             </p>
                         </div>

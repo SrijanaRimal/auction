@@ -109,7 +109,7 @@ $bidremainingTime = $currentDateTime->diff($bidEndDateTime);
 
                             </p>
 
-                            <p class="price"><?php  if($bidremainingTime-> invert == 1) 
+                            <p class="price"><?php  if($bidremainingTime-> invert == 1)  
                                 echo 'Final'; else echo 'Current';?> Bid : Rs
 
                                 <?php echo $singleProduct->current_bid; ?>
@@ -118,6 +118,7 @@ $bidremainingTime = $currentDateTime->diff($bidEndDateTime);
                                 $bid = new Bid();
                                 $user = new User();
                                 $winningBid = $bid->getWiningBId($singleProduct->id, $singleProduct->current_bid);
+                                
                                 $winningUser = $user->getUserInfo($winningBid->bidder);
                                 echo("
                                 <h4>Bid winner: ".$winningUser->first_name." ".$winningUser->last_name." </h4>");   

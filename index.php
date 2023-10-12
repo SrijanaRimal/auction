@@ -3,8 +3,6 @@
  ?>
 
 <?php
-// error_reporting(E_ALL);
-// ini_set('display_errors', 1);
 $template = new Template('views/front_page.php');
 
 $category = new Category();
@@ -12,13 +10,12 @@ $product = new Product();
 
 
 $template->categories = $category->getAllCategories();
- $template->electronicProducts = $product->getProductsByCategory(1);
+ $template->electronicProducts = $product->getProductsByCategory(2);
 
 $electronicProducts = $product->getElectronicProduct();
 
 
 $template->allProducts=$product->getAllProducts();
-$template->electronicProducts=$electronicProducts;
 
 
 

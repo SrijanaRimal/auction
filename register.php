@@ -1,8 +1,7 @@
 <?php require_once('core/init.php');?>
 
 <?php 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 
 $template=new Template('views/register.php');
 $userObject = new User();

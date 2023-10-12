@@ -52,6 +52,7 @@ class Bid
     }
 
     public function getWiningBId($productId, $winningBidPrice){
+        
         $this->db->query("SELECT * FROM  bid WHERE  product_id = :product_id AND bid_price = :bid_price");
         $this->db->bind(':product_id', $productId);
         $this->db->bind(':bid_price', $winningBidPrice);
